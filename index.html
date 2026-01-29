@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMP PRO | O Próximo Nível</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>CARREGANDO SERVIDOR...</p>
+    </div>
+
+    <nav class="navbar">
+        <div class="container-nav">
+            <div class="logo">SAMP <span>PRO</span></div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-item"><i class="fas fa-home"></i> INÍCIO</a></li>
+                <li><a href="#loja" class="nav-item"><i class="fas fa-shopping-cart"></i> LOJA</a></li>
+                <li>
+                    <button class="cart-btn-nav" onclick="toggleCart()">
+                        <i class="fas fa-shopping-basket"></i> 
+                        <span class="cart-text"> Carrinho</span> (<span id="cart-count">0</span>)
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-line"></div>
+    </nav>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>MEU CARRINHO</h3>
+            <button onclick="toggleCart()" class="close-cart">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items-list">
+            <p class="empty-msg">Seu carrinho está vazio.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-container">
+                <span>TOTAL:</span>
+                <span id="cart-total">R$ 0,00</span>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">
+                <i class="fab fa-whatsapp"></i> FINALIZAR E PAGAR
+            </button>
+        </div>
+    </div>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <span class="badge">SERVIDOR ONLINE</span>
+            <h1>DOMINE AS RUAS DE <span>LOS SANTOS</span></h1>
+            <p>Economia realista, sistemas inovadores e a melhor staff do Brasil.</p>
+            <div class="ip-container">
+                <code id="server-ip">jogar.meuservidor.com:7777</code>
+                <button onclick="copyIP()" class="btn-copy" id="copyBtn">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section id="loja" class="store-section">
+        <h2 class="section-title">Nossa <span>Loja</span></h2>
+        <div class="store-grid">
+            
+            <div class="store-card">
+                <div class="item-icon"><i class="fas fa-gem"></i></div>
+                <h3>VIP DIAMANTE</h3>
+                <p>O plano mais completo.</p>
+                <div class="item-price">R$ 50,00</div>
+                <button class="btn-add" onclick="addToCart('VIP Diamante', 50.00)">ADICIONAR</button>
+            </div>
+
+            <div class="store-card">
+                <div class="item-icon"><i class="fas fa-coins"></i></div>
+                <h3>50K GOLD</h3>
+                <p>Moeda premium.</p>
+                <div class="item-price">R$ 25,00</div>
+                <button class="btn-add" onclick="addToCart('50K Gold', 25.00)">ADICIONAR</button>
+            </div>
+
+            <div class="store-card">
+                <div class="item-icon"><i class="fas fa-car"></i></div>
+                <h3>CARRO VIP</h3>
+                <p>Veículo exclusivo.</p>
+                <div class="item-price">R$ 15,00</div>
+                <button class="btn-add" onclick="addToCart('Carro VIP', 15.00)">ADICIONAR</button>
+            </div>
+
+        </div>
+    </section>
+    
+    <section id="equipe" class="team-section">
+        <h2 class="section-title">Nossa <span>Equipe</span></h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="staff-img"><i class="fas fa-user-tie"></i></div>
+                <h4>Dono Nome</h4>
+                <p>Fundador & Dev</p>
+            </div>
+            <div class="team-card">
+                <div class="staff-img"><i class="fas fa-user-shield"></i></div>
+                <h4>Admin Nome</h4>
+                <p>Gerente Geral</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <h2 class="section-title">Dúvidas <span>Frequentes</span></h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Como recebo meu VIP? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Após o pagamento, envie o comprovante no nosso Discord. O prazo de ativação é de até 24h.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    O servidor é 24/7? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Sim! Nosso servidor utiliza hospedagem de alta performance para garantir 99% de uptime.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; color: #444; font-size: 12px; border-top: 1px solid #111;">
+        &copy; 2026 SAMP PRO - Todos os direitos reservados.
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
